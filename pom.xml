@@ -4,6 +4,95 @@
   <artifactId>tagserver</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>Mock Test Server</name>
   <description>Mock Test Server</description>
+  <name>deneb</name>
+  <url>http://maven.apache.org</url>
+  
+  <developers>
+		<developer>
+			<name>Rakesh Kaim</name>
+			<roles>
+				<role>Programmer</role>
+				<role>Designer</role>
+				<role>Quality Assurer</role>
+			</roles>
+			<email>kaim4u@gmail.com</email>
+		</developer>
+	</developers>
+	
+	<properties>
+		<!-- Generic properties -->
+		<java.version>11</java.version>
+		
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <spring-version>5.1.3.RELEASE</spring-version>
+        <thymeleaf-version>3.0.11.RELEASE</thymeleaf-version>
+    
+    
+		<!-- Logging -->
+		<logback.version>1.0.13</logback.version>
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<!-- Test -->
+		<junit.version>4.11</junit.version>
+		<surefire.version>2.13</surefire.version>
+		<cobertura.version>2.7</cobertura.version>
+		<skipTests>false</skipTests>
+
+	</properties>
+	
+	<dependencies>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>${thymeleaf-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>${thymeleaf-version}</version>
+        </dependency>
+
+    </dependencies>
+    
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.14.v20181114</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
